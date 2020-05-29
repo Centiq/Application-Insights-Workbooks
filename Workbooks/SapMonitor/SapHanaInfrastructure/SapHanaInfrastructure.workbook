@@ -111,6 +111,13 @@
             "linkLabel": "Host Config",
             "subTarget": "3",
             "style": "secondary"
+          },
+          {
+            "cellValue": "selectedTab",
+            "linkTarget": "parameter",
+            "linkLabel": "Backups",
+            "subTarget": "4",
+            "style": "secondary"
           }
         ]
       },
@@ -1231,6 +1238,37 @@
         "value": "2"
       },
       "name": "Anomalies_Memory"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "",
+        "size": 0,
+        "aggregation": 3,
+        "title": "Backup Size",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces",
+        "visualization": "categoricalbar",
+        "chartSettings": {}
+      },
+      "conditionalVisibilities": [
+        {
+          "parameterName": "selectedTab",
+          "comparison": "isEqualTo",
+          "value": "4"
+        },
+        {
+          "parameterName": "testDataExist",
+          "comparison": "isNotEqualTo"
+        }
+      ],
+      "conditionalVisibility": {
+        "parameterName": "selectedTab",
+        "comparison": "isEqualTo",
+        "value": "4"
+      },
+      "name": "backup_size"
     }
   ],
   "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
